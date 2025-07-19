@@ -1,10 +1,8 @@
-<?php 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
+<?php
 
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/hello', function () {
-    return response()->json(['message' => 'Hello API']);
-});
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\API\AuthController;
+
+Route::post('/register', [AuthController::class, 'register'])->name('api.register');
 
