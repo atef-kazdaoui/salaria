@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Connexion - Mon App</title>
+    <title>Connexion - salairia</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
                     </div>
                 @endif
 
-                {{-- ❌ Erreurs de validation --}}
+                {{--  Erreurs de validation --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul class="mb-0">
@@ -48,7 +48,7 @@
                     </div>
                 @endif
 
-                {{-- ✅ Formulaire de connexion --}}
+                {{--  Formulaire de connexion --}}
                 <div class="auth-form-container text-start">
                     <form method="POST" action="{{ route('api.login') }}">
                         @csrf

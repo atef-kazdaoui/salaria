@@ -42,7 +42,7 @@ class AuthController extends Controller
         event(new Registered($user));
 
         // 4. Redirect to login with success message
-        return redirect('/connexion')->with('success', 'Account created successfully. Please check your email to verify your address.');
+        return redirect('/connexion')->with('success', 'Compte créé avec succès. Veuillez vérifier votre adresse e-mail pour la confirmer.');
     }
 
     /**
@@ -66,7 +66,7 @@ class AuthController extends Controller
 
         // 2. Attempt to authenticate
         if (!Auth::attempt($credentials)) {
-            return redirect()->back()->with('error', 'Invalid email or password.');
+            return redirect()->back()->with('error', 'Adresse e-mail ou mot de passe invalide.');
         }
 
         $user = Auth::user();

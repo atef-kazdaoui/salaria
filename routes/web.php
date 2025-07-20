@@ -13,7 +13,7 @@ Route::get('/connexion', function () {
     return view('auth.login');
 })->name('login');
 
-Route::get('/inscription', function () {
+Route::get('/', function () {
     return view('auth.signup');
 })->name('signup');
 
@@ -45,7 +45,7 @@ Route::get('/email/verify/{id}/{hash}', function ($id, $hash) {
         event(new Verified($user));
     }
 
-    return redirect('/connexion')->with('success', 'Your email has been verified. You can now log in.');
+    return redirect('/connexion')->with('success', 'Votre adresse e-mail a été vérifiée. Vous pouvez maintenant vous connecter.');
 })->middleware('signed')->name('verification.verify');
 
 // --- Resend verification email manually ---
